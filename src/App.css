@@ -182,3 +182,207 @@
     border-right-color: var(--border);
   }
 }
+
+
+
+
+.relationship-section {
+  display: grid;
+  grid-template-columns: 280px minmax(420px, 680px);
+  gap: 64px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 120px auto;
+  padding: 0 32px;
+  color: #000;
+}
+
+.relationship-copy h2 {
+  font-size: 42px;
+  line-height: 1.05;
+  font-weight: 400;
+  margin: 0 0 28px;
+}
+
+.relationship-copy p {
+  font-size: 21px;
+  line-height: 1.18;
+  margin: 0 0 34px;
+}
+
+.relationship-stats p {
+  font-size: 22px;
+  margin: 0 0 18px;
+}
+
+.relationship-model {
+  width: 100%;
+}
+
+.relationship-model svg {
+  width: 100%;
+  display: block;
+}
+
+.outer-ring {
+  fill: none;
+  stroke: #000;
+  stroke-width: 0.4;
+  opacity: 0.18;
+}
+
+
+
+
+
+
+
+
+
+.network-float {
+  animation: networkFloat 7s ease-in-out infinite;
+  transform-origin: 300px 300px;
+}
+
+.relationship-line {
+  fill: none !important;
+  stroke: #000;
+  stroke-width: 0.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.5;
+
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: drawRelationship 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.organized-line {
+  stroke: #000;
+  stroke-width: 0.4;
+  stroke-linecap: round;
+  opacity: 0.35;
+
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawRelationship 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.person {
+  fill: #000;
+}
+
+@keyframes drawRelationship {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes networkFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translate(2px, -3px) rotate(0.35deg) scale(1.004);
+  }
+}
+
+
+
+
+
+
+
+
+
+.rh-core {
+  fill: white;
+  stroke: #000;
+  stroke-width: 1;
+}
+
+.rh-label {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.rh-sub {
+  font-size: 14px;
+}
+
+.relationship-controls {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.relationship-controls input {
+  width: 420px;
+  accent-color: #000;
+}
+
+.toggle {
+  border: 1px solid #000;
+  background: white;
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.toggle.active {
+  background: #000;
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .relationship-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .relationship-copy h2 {
+    font-size: 34px;
+  }
+
+  .relationship-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .relationship-controls input {
+    width: 100%;
+  }
+}
+
+
+
+.relationship-line-new {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawNewRelationship 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.person-new {
+  animation: personPop 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes drawNewRelationship {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes personPop {
+  0% {
+    r: 0;
+    opacity: 0;
+  }
+
+  100% {
+    r: 4;
+    opacity: 1;
+  }
+}
