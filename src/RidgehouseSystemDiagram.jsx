@@ -22,6 +22,7 @@ export default function RidgehouseSystemDiagram() {
     { id: "systems", label: "Systems", x: 1255, y: 615, anchor: "bottom" },
   ];
 
+  
   const allBasePoints = useMemo(
     () => [baseInput, baseDecision, baseOutput, ...baseNodes],
     []
